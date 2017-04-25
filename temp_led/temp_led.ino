@@ -30,6 +30,23 @@ void loop() {
   } else {
     toggle = false;
   }
+
+  if (CircuitPlayground.slideSwitch()) {
+    //sensor demo mode
+    if (CircuitPlayground.leftButton()) {
+      threshold = tempC+1;
+    }
+  } else {
+    //animation loop mode
+    if (CircuitPlayground.rightButton()) {
+      toggle = true;
+    }else{
+      toggle = false;
+    }
+  }
+
+
+
 }
 
 void fade() {
